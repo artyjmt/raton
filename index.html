@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>       
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carreras Universitarias</title>
+    <link rel="icon" type="image/jpg" href="foto.png">
+      <link rel="styles.css" href="styles.css">
+    <style>
+        body {
+            background-image: url('foto1.jpeg');
+             background-size: cover; /* Para cubrir todo el fondo */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #CBE12B
+            margin: 0;
+            padding: 0;
+          
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+
+        nav {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            overflow-x: auto; /* Agregamos una barra de desplazamiento horizontal */
+            max-width: 100vw; /* Limitamos la anchura del menú */
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        #menuIcon {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav {
+                display: none;
+                position: static;
+                width: 100%;
+                text-align: center;
+                background-color: #333;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            #menuIcon {
+                display: block;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e5e5e5;
+        }
+
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* Estilo adicional para la tabla en pantallas pequeñas */
+        @media only screen and (max-width: 600px) {
+            table {
+                border: 1px solid #ddd;
+            }
+
+            th, td {
+                border: none;
+                border-bottom: 1px solid #ddd;
+                display: block;
+                text-align: center;
+            }
+
+            th {
+                background-color: #f4f4f4;
+            }
+
+            header {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+   
+
+        <span id="uno.js">&#8801; Menú</span>
+        <nav>
+            <a href="pi.html" target="_blank">Principal</a>
+            <a href="se.html" target="_blank">Secundarios</a>
+            <!-- Agrega más enlaces según sea necesario -->
+        </nav>
+    </header>
+
+    <h1 style="color: blue;"> Carreras Universitarias</h1>
+
+    <label for="carreras">Selecciona una carrera:</label>
+    <select id="carreras" onchange="mostrarPorcentaje()">
+        <option value="ingenieria" style="color: blue;">Ingeniería</option>
+        <option value="medicina" style="color: blue;">Medicina</option>
+        <option value="economia" style="color: blue;" >Economía</option>
+        <!-- Agrega más opciones según sea necesario -->
+    </select>
+  
+    <table id="tablaPorcentaje">
+        <tr>
+            <th>Universidad</th>
+            <th>Porcentaje necesario</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+        </tr>
+        <tr id="ingenieria">
+            <td style="color: #BAE342">Universidad de Ingeniería</td>
+            <td  style="color: #4ADE1E">80%</td>
+            <td style="color: #4ADE1E">La carrera de Ingeniería se enfoca enprogramas académicos de educación superior que preparan a los estudiantes para trabajar como ingenieros en diversas disciplinas. La ingeniería es una rama amplia que abarca numerosos campos, y los programas de ingeniería pueden variar en enfoque y especialización.Algunas de las carreras de ingeniería más comunes incluyen:
+
+     <br> Ingeniería Civil: Diseño y construcción de infraestructuras como carreteras, puentes y edificios.
+
+       <br>Ingeniería Mecánica: Diseño y fabricación de productos y sistemas mecánicos.
+
+ <br>Ingeniería Eléctrica: Trabajo con sistemas eléctricos, electrónicos y de comunicación.
+ <br>
+ <br>Ingeniería Electrónica: Enfoque en el diseño y aplicación de circuitos electrónicos.
+ <br>
+ <br>Ingeniería Química: Procesos químicos industriales y diseño de plantas químicas.
+ <br>
+ <br>Ingeniería de Software: Desarrollo de software y sistemas de información.
+ <br>
+ <br>Ingeniería Industrial: Mejora de procesos y sistemas para aumentar la eficiencia y productividad.
+ <br>
+ <br>Ingeniería Aeroespacial: Diseño y fabricación de aeronaves y sistemas espaciales.
+ <br>
+ <br>Ingeniería Biomédica: Aplicación de principios de ingeniería en el campo de la medicina y la biología.
+ <br>
+ <br>Ingeniería Ambiental: Solución de problemas relacionados con el medio ambiente y sostenibilidad.</td>
+            <td><img src="foto.jpg" alt="Ingeniería" height="400"></td>
+        </tr>
+
+        <tr id="medicina" style="display:none" >
+            <td style="color: #BAE342">Universidad de Medicina</td>
+            <td  style="color: #4ADE1E">90%</td>
+            <td style="color: #4ADE1E">La carrera de Medicina se centra en la disciplina académica y profesional que prepara a los estudiantes para convertirse en médicos, profesionales de la salud que diagnostican, tratan y previenen enfermedades en seres humanos. Aquí hay algunos aspectos clave de la carrera de medicina:
+
+<br>Duración del Programa:
+
+La duración de la carrera de medicina varía según el país, pero generalmente, se lleva a cabo a nivel universitario y suele durar entre 5 y 7 años.
+<br>Requisitos de Admisión:
+
+Los requisitos de admisión pueden variar según la institución y el país. Sin embargo, en la mayoría de los casos, se requiere un título de educación secundaria, y se deben aprobar exámenes de ingreso específicos.
+<br>Estructura del Programa:
+
+Los primeros años suelen centrarse en cursos teóricos y científicos, como anatomía, fisiología, bioquímica y microbiología.
+A medida que avanzan, los estudiantes participan en prácticas clínicas y rotaciones en hospitales para adquirir experiencia práctica.
+<br>Especializaciones y Residencia:
+
+Después de completar la carrera de medicina, muchos médicos eligen especializarse en un área específica, como cirugía, pediatría, ginecología, etc.
+Para especializarse, los médicos suelen realizar programas de residencia que pueden durar varios años.
+<br>Licencia y Certificación:
+
+Después de completar la educación y la residencia, los médicos deben obtener una licencia para practicar. Esto generalmente implica aprobar un examen de licencia médica.
+Algunos médicos también buscan certificaciones adicionales en sus áreas de especialización.
+<br>Ética y Deontología Médica:
+
+La ética médica es un componente crucial de la formación médica. Los estudiantes aprenden sobre la responsabilidad, la confidencialidad y la relación médico-paciente.
+<br>Desarrollo Profesional Continuo:
+
+Dado que la medicina es un campo en constante evolución, los médicos participan en el desarrollo profesional continuo para mantenerse actualizados sobre avances médicos, tecnologías y prácticas.
+<br>Habilidades Personales:
+Además de los conocimientos técnicos, los médicos necesitan habilidades interpersonales, empatía y habilidades de comunicación efectivas para interactuar adecuadamente con los pacientes y otros profesionales de la salud..</td>
+            <td><img src="medicina.jpeg" alt="Medicina"></td>
+        </tr>
+
+        <tr id="economia" style="display:none" >
+            <td style="color:#BAE342" >Universidad de Economía</td>
+            <td  style="color: #4ADE1E">75%</td>
+            <td style="color: #4ADE1E">La carrera de Economía aborda la disciplina que estudia cómo se asignan los recursos escasos para satisfacer las necesidades humanas. Aquí hay algunos conceptos clave relacionados con la economía:
+
+<br>Oferta y Demanda:
+La ley de oferta y demanda es fundamental en economía. Establece que el precio de un bien o servicio se establece en el punto donde la cantidad ofrecida es igual a la cantidad demandada.
+<br>Mercados:
+Los mercados son lugares o plataformas donde compradores y vendedores se encuentran para realizar transacciones. Pueden ser físicos (como un mercado local) o virtuales (como un mercado en línea).
+<br>Producción y Costos:
+La economía analiza cómo se produce y se distribuye la riqueza. Esto implica estudiar la producción de bienes y servicios, así como los costos asociados con esa producción.
+<br>Macroeconomía:
+
+La macroeconomía se centra en el estudio de la economía en su conjunto. Analiza indicadores como el producto interno bruto (PIB), la tasa de desempleo y la inflación.
+<br>Microeconomía:
+
+La microeconomía se enfoca en unidades económicas individuales, como empresas y consumidores. Examina cómo toman decisiones y cómo interactúan en el mercado.
+<br>Política Monetaria y Fiscal:
+
+Los gobiernos y los bancos centrales utilizan la política monetaria y fiscal para influir en la economía. La política monetaria implica el control de la oferta de dinero y las tasas de interés, mientras que la fiscal se refiere al manejo de los ingresos y gastos del gobierno.
+<br>Ciclos Económicos:
+
+Las economías tienden a experimentar ciclos de expansión y contracción. Los periodos de crecimiento suelen ir seguidos de recesiones. Los economistas estudian estos ciclos para entender mejor la dinámica económica.
+<br>Comercio Internacional:
+
+El comercio internacional es crucial en la economía global. Los países participan en el intercambio de bienes y servicios para aprovechar las ventajas comparativas y mejorar su bienestar económico.
+<br>Desarrollo Económico:
+
+La economía también aborda cuestiones de desarrollo económico, analizando cómo los países pueden mejorar sus estándares de vida a lo largo del tiempo.
+<br>Economía del Comportamiento:
+
+Este es un campo emergente que combina la psicología con la economía para comprender cómo las personas toman decisiones económicas y cómo esos comportamientos afectan la economía en general.</td>
+</p>
+            <td><img src="economia.jpeg" alt="Economía"></td>
+        </tr>
+        <!-- Agrega más filas según sea necesario -->
+    </table>
+    <script>
+        function mostrarPorcentaje() {
+            var seleccion = document.getElementById("carreras").value;
+            var filas = document.getElementsByTagName("tr");
+
+            for (var i = 0; i < filas.length; i++) {
+                if (filas[i].id === seleccion) {
+                    filas[i].style.display = "";
+                } else {
+                    filas[i].style.display = "none";
+                }
+            }
+        }
+
+        // JavaScript para mostrar/ocultar el menú en pantallas pequeñas
+        document.getElementById("uno.js").addEventListener("click", function () {
+            var nav = document.querySelector("nav");
+            nav.style.display = nav.style.display === "block" ? "none" : "block";
+        });
+    </script>
+ <footer>
+        <p>&copy; 2023 Tu Empresa | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <!-- Contenido de tu página -->
+    <!-- ... (el mismo contenido HTML que en el ejemplo anterior) -->
+    
+    <!-- Pestaña en el lado derecho -->
+    <div class="tab"></div> 
+    <script>
+        // JavaScript para hacer que la pestaña sea interactiva (opcional)
+        const tab = document.querySelector(".tab");
+        tab.addEventListener("click", () => {
+            // Acción al hacer clic en la pestaña (puede ser un desplazamiento suave o algo similar)
+            // Ejemplo: window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
+    <!-- ... (código HTML anterior) -->
+<!-- Contenido adicional oculto -->
+<div class="tab-content">
+</div>
+</body>
+</html>
