@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Presentación y Contacto</title>
+        <link rel="icon" type="image/jpg" href="foto.png">
+              <link rel="styles.css" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+          }
+
+        nav {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            overflow-x: auto; /* Agregamos una barra de desplazamiento horizontal */
+            max-width: 100vw; /* Limitamos la anchura del menú */
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        #menuIcon {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav {
+                display: none;
+                position: static;
+                width: 100%;
+                text-align: center;
+                background-color: #333;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            #menuIcon {
+                display: block;
+            }
+        }
+    </style>
+    <header>
+        <nav>
+            <a href="index.html" target="_blank">Principal</a>
+                    <a href="pi.html" target="_blank">la otra </a>
+            <!-- Agrega más enlaces según sea necesario -->
+        </nav>
+    </header>
+<body>
+    <section>
+        <h2>Equipo Principal</h2>
+        <p>AQUI LOS QUE HICIERON ALGO (creo) </p>
+         <h2>Ivan Moran </h2>
+
+       <img src="iva.jpg" alt="soy yo RATON " width="200" height="100">
+
+ <h2>Dayana Vera</h2>
+       <img src="ver.jpg" alt="soy yo RATON " width="200" height="100">
+ <h2>Sofia Rosario</h2>
+
+        <img src="rosa.jpg" alt="soy yo RATON " width="200" height="100">
+ <h2>Joy Franco </h2>
+       <img src="joy.jpeg" alt="soy yo RATON " width="200" height="100">
+    </section>
+
+    <footer>
+
+        <p>&copy; 2023 Tu Empresa | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
