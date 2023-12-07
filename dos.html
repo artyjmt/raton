@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carreras Universitarias</title>
+      <link rel="styles.css" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+
+        nav {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            overflow-x: auto; /* Agregamos una barra de desplazamiento horizontal */
+            max-width: 100vw; /* Limitamos la anchura del menú */
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        #menuIcon {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav {
+                display: none;
+                position: static;
+                width: 100%;
+                text-align: center;
+                background-color: #333;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            #menuIcon {
+                display: block;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e5e5e5;
+        }
+
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* Estilo adicional para la tabla en pantallas pequeñas */
+        @media only screen and (max-width: 600px) {
+            table {
+                border: 1px solid #ddd;
+            }
+
+            th, td {
+                border: none;
+                border-bottom: 1px solid #ddd;
+                display: block;
+                text-align: center;
+            }
+
+            th {
+                background-color: #f4f4f4;
+            }
+
+            header {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span id="menuIcon">&#8801; Menú</span>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Carreras</a>
+            <!-- Agrega más enlaces según sea necesario -->
+        </nav>
+    </header>
+
+    <h1>Carreras Universitarias</h1>
+
+    <label for="carreras">Selecciona una carrera:</label>
+    <select id="carreras" onchange="mostrarPorcentaje()">
+        <option value="ingenieria">Ingeniería</option>
+        <option value="medicina">Medicina</option>
+        <option value="economia">Economía</option>
+        <!-- Agrega más opciones según sea necesario -->
+    </select>
+
+    <table id="tablaPorcentaje">
+        <tr>
+            <th>Universidad</th>
+            <th>Porcentaje necesario</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+        </tr>
+        <tr id="ingenieria">
+            <td>Universidad de Ingeniería</td>
+            <td>80%</td>
+            <td>La carrera de Ingeniería se enfoca en programas académicos de educación superior que preparan a los estudiantes para trabajar como ingenieros en diversas disciplinas. La ingeniería es una rama amplia que abarca numerosos campos, y los programas de ingeniería pueden variar en enfoque y especialización.Algunas de las carreras de ingeniería más comunes incluyen:
+
+     <br> Ingeniería Civil: Diseño y construcción de infraestructuras como carreteras, puentes y edificios.
+
+       <br>Ingeniería Mecánica: Diseño y fabricación de productos y sistemas mecánicos.
+
+ <br>Ingeniería Eléctrica: Trabajo con sistemas eléctricos, electrónicos y de comunicación.
+ <br>
+ <br>Ingeniería Electrónica: Enfoque en el diseño y aplicación de circuitos electrónicos.
+ <br>
+ <br>Ingeniería Química: Procesos químicos industriales y diseño de plantas químicas.
+ <br>
+ <br>Ingeniería de Software: Desarrollo de software y sistemas de información.
+ <br>
+ <br>Ingeniería Industrial: Mejora de procesos y sistemas para aumentar la eficiencia y productividad.
+ <br>
+ <br>Ingeniería Aeroespacial: Diseño y fabricación de aeronaves y sistemas espaciales.
+ <br>
+ <br>Ingeniería Biomédica: Aplicación de principios de ingeniería en el campo de la medicina y la biología.
+ <br>
+ <br>Ingeniería Ambiental: Solución de problemas relacionados con el medio ambiente y sostenibilidad.</td>
+            <td><img src="ingenieria.jpg" alt="Ingeniería"></td>
+        </tr>
+        <tr id="medicina" style="display:none;">
+            <td>Universidad de Medicina</td>
+            <td>90%</td>
+            <td>La carrera de Medicina se centra en...</td>
+            <td><img src="medicina.jpg" alt="Medicina"></td>
+        </tr>
+        <tr id="economia" style="display:none;">
+            <td>Universidad de Economía</td>
+            <td>75%</td>
+            <td>La carrera de Economía aborda...</td>
+            <td><img src="economia.jpg" alt="Economía"></td>
+        </tr>
+        <!-- Agrega más filas según sea necesario -->
+    </table>
+
+    <script>
+        function mostrarPorcentaje() {
+            var seleccion = document.getElementById("carreras").value;
+            var filas = document.getElementsByTagName("tr");
+
+            for (var i = 0; i < filas.length; i++) {
+                if (filas[i].id === seleccion) {
+                    filas[i].style.display = "";
+                } else {
+                    filas[i].style.display = "none";
+                }
+            }
+        }
+
+        // JavaScript para mostrar/ocultar el menú en pantallas pequeñas
+        document.getElementById("menuIcon").addEventListener("click", function () {
+            var nav = document.querySelector("nav");
+            nav.style.display = nav.style.display === "block" ? "none" : "block";
+        });
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Página Web</title>
+    
+    <!-- Enlace a tu archivo CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+<body>
+    <!-- Contenido de tu página -->
+    
+    <!-- Enlace a tu archivo JavaScript -->
+    <script src="extencion.js"></script>
+
+    <!-- ... (el mismo contenido HTML que en el ejemplo anterior) -->
+    
+    <!-- Pestaña en el lado derecho -->
+    <div class="tab">Pestaña</div>
+    
+    <script>
+        // JavaScript para hacer que la pestaña sea interactiva (opcional)
+        const tab = document.querySelector(".tab");
+        tab.addEventListener("click", () => {
+            // Acción al hacer clic en la pestaña (puede ser un desplazamiento suave o algo similar)
+            // Ejemplo: window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
+    <!-- ... (código HTML anterior) -->
+
+<!-- Contenido adicional oculto -->
+<div class="tab-content">
+    
+</div>
+</body>
+</html>
